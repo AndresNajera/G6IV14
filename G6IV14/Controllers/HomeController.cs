@@ -28,11 +28,27 @@ namespace G6IV14.Controllers
             return View();
         }
 
+        public IActionResult Registro()
+        {
+            return View();
+        }
+
+        public IActionResult Gracias(string correo, string contrasena)
+        {
+            ViewBag.Correo = correo;
+            ViewBag.Contrasena = contrasena;
+            return View();
+        }
+
+        /* Cuando una acción (método) tiene parámetros estos pueden ser
+         * enviados por GET o POST, en el caso del siguiente ejemplo
+          la sintaxis del URL es: http://localhost:7396/Home/Saludo?Nombre=Pedrito&Edad=654654654 
+        */
         public IActionResult Saludo(string Nombre, int Edad)
         {
             /* ViewBag es un diccionario de tipado débil para 
              * almacenar objetos de diferentes tipos */
-            //Sintaxis ViewBag.NombreObjero = Valor;
+            //Sintaxis ViewBag.NombreObjeto = Valor;
             ViewBag.Nombre = Nombre;
             ViewBag.Edad = Edad;
             return View();
